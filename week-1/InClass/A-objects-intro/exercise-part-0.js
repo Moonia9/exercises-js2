@@ -11,3 +11,13 @@ let laptop = {
     screenSize: 13,
     isTouchscreen: true,
   };
+
+  let asusLaptop = {
+    brand : "Asus ROG",
+    screenSize : 27,
+    isTouchscreen : false,
+    color : "metallic",
+    hasCamera : true,
+  };
+  console.log(asusLaptop);
+  console.table(asusLaptop);
