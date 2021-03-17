@@ -18,3 +18,6 @@ console.log(kitten["ageMonths"]);
 console.log(kitten["isFemale"]);
 console.log(kitten["furColour"]);
 
+//If I want to add another property
+kitten.eyeColour = "green";
+console.log(kitten);
