@@ -25,3 +25,6 @@ let obj = {
     "first name" : "enia",
     last_name : "munteanu"
 };
+
+obj.last_name = "Maria"
+console.log(obj);
