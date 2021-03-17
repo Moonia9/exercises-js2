@@ -18,5 +18,10 @@ var phone = {
     operatingSystem : "iOS",
     hasStylus: true,
     megapixels : 12,
-    batteryLife : "24 hours"
+    "batteryLife" : "24 hours"
+};
+
+let obj = {
+    "first name" : "enia",
+    last_name : "munteanu"
 };
