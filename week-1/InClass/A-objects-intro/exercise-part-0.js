@@ -41,7 +41,7 @@ let laptop = {
     },
     description : function(){
       console.log(`The name of the laptop brand is ${/*asusLaptop*/this.brand} and screen size is ${/*asusLaptop*/this.screenSize}`)
-    }
+    },
   };
 
  console.log(asusLaptop.playMovie());
