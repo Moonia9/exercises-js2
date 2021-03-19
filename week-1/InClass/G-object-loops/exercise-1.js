@@ -11,3 +11,8 @@ const studentGrades = {
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  let studentsNameWithGradesGreaterThanEighteen = Object.keys(studentGrades).forEach((key) => {
+    if (studentGrades[key] > 18)
+      console.log(key.toUpperCase() + " - " + studentGrades[key]);
+  })
