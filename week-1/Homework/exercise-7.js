@@ -39,6 +39,13 @@ var writers = [
   },
 ];
 
+function personality (writersGreet){
+  writersGreet.forEach(person => {
+    console.log(`Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old, and work as a ${person.occupation}.`)
+  });
+}
+personality(writers);
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
