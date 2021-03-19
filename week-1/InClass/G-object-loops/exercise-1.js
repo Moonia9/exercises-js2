@@ -16,3 +16,5 @@ const studentGrades = {
     if (studentGrades[key] > 18)
       console.log(key.toUpperCase() + " - " + studentGrades[key]);
   })
+
+ 
