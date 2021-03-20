@@ -27,6 +27,13 @@ let coffeeMachine = {
       }
     },
   };
+
+  //Or writing it with the ternary operator
+  getCoffee : function (coffee) {
+    return this.insertedAmount >= this.prices[coffee] ?
+    `Please take your ${coffee}` :
+    `Sorry you don't have enough money for a ${coffee}`;
+  }
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
