@@ -6,3 +6,4 @@ a < b /* && a!=b */ ? console.log(`${a} is less than ${b}`) : console.log(`${a} 
 //Syntax
 //condition ? true : false
 //condition ? 'if true --> return this' : 'if not true(false) --> return this'
+

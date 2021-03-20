@@ -32,7 +32,7 @@ let coffeeMachine = {
   getCoffee : function (coffee) {
     return this.insertedAmount >= this.prices[coffee] ?
     `Please take your ${coffee}` :
-    `Sorry you don't have enough money for a ${coffee}`;
+    `Sorry you don't have enough money for a ${coffee}`; 
   }
   
   /*
