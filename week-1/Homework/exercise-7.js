@@ -50,3 +50,11 @@ personality(writers);
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+
+function aliveWriters (person) {
+ aliveWriters.forEach(person => {
+   if(person.alive === true) {
+     console.log(`These are all the ${person.firstName} are alive`)
+   }
+ })
+}
