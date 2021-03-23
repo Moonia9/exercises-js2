@@ -19,7 +19,7 @@ let highScores = {
 };
 
 // ONLY EDIT BELOW HERE
-
+ 
 let capitalCitiesKeys = Object.keys(capitalCities) ; 
 let highScoresKeys = Object.keys(highScores) ;
 let capitalCitiesValues = Object.values(capitalCities) ;

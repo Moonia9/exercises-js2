@@ -74,17 +74,19 @@ function removeFromShoppingCart(id){
 // In addition will substract 1 in the product stock of bought products
 function shop(){
   shoppingCart.selectedProducts.forEach(sp => {
-    products.forEach(p => {
-      if(p.id === sp.id){
-        if(p.stock > 0){
-          p.stock = p.stock - 1 //or p.stock --
-        }
-        if(p.stock === 0) {
-          console.log(`This product is not available for this quantity`)
-          return
-        }
-      }
-    })
+    console.log(sp);
+    sp.stock -= 1
+    // products.forEach(p => {
+    //   if(p.id === sp.id){
+    //     if(p.stock > 0){
+    //       p.stock = p.stock - 1 //or p.stock --
+    //     }
+    //     if(p.stock === 0) {
+    //       console.log(`This product is not available for this quantity`)
+    //       return
+    //     }
+    //   }
+    // })
   })
   shoppingCart.selectedProducts = [];
   shoppingCart.totalPrice = 0;
@@ -96,15 +98,12 @@ function addToShoppingCart(id){
   if(selectedProduct.stock > 0){
     shoppingCart.selectedProducts.push(selectedProduct)
     shoppingCart.totalPrice = shoppingCart.totalPrice + selectedProduct.price
+  } else {
+    console.log(`There is not enough stock of ${selectedProduct.name}`);
   }
 
 //or shoppingCart.totalPrice += selectedProducts.price
 }
-
-
-
-
-
 
 //results
 addToShoppingCart(1);

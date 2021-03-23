@@ -140,10 +140,10 @@ function removeSkill(mentors,newSkill){
   //6.
   function mentorWithMoreSkills(mentors){
     let mentorsName = "";
-    let numberOfSkills = 0;
+    let maximumNumberOfSkills = 0;
     mentors.forEach(mentor => {
-      if(mentor.skills.length > numberOfSkills){
-        numberOfSkills = mentor.skills.length
+      if(mentor.skills.length > maximumNumberOfSkills){
+        maximumNumberOfSkills = mentor.skills.length
         mentorsName = mentor.firstName + " " + mentor.lastName;
       }
     })
