@@ -16,3 +16,16 @@ function sayHi() {
     console.log("sayHi is working!");
 }
 
+/*OR WE CAN WRITE IT AS
+ myButton.addEventListener("click", () => {
+     var title = document.querySelector("#title");
+    var name = document.querySelector("#name");
+    title.innerText = "Hello " + name.value; 
+
+    var content = document.querySelector("#content");
+    var paragraph = document.createElement("p");
+    paragraph.innerText = "I said Hello to " + name.value; 
+    content.appendChild(paragraph);
+    
+    console.log("sayHi is working!");
+ });*/
