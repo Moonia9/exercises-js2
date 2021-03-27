@@ -132,10 +132,16 @@ const btnChangeMultiColor = document.querySelector("#bgrChangeBtn");
 btnChangeMultiColor.addEventListener("click", changeMultiColor);
 
 const colors = ["lightGrey", "pink", "green", "grey", "purple"];
-function changeMultiColor() {
-    const currentColor = document.body.style.backgroundColor;
-    const indexCurrent = colors.findIndex(c => c === currentColor)
-    const nextColor = colors[indexCurrent + 1] || colors[0]
-    document.body.style.backgroundColor = nextColor;
+// function changeMultiColor() {
+//     const currentColor = document.body.style.backgroundColor;
+//     const indexCurrent = colors.findIndex(c => c === currentColor)
+//     const nextColor = colors[indexCurrent + 1] || colors[0]
+//     document.body.style.backgroundColor = nextColor;
     
-}
+// }
+let i = 0;
+const changeBtn = document.querySelector("#bgrChangeBt");
+changeBtn.addEventListener("click", () => {
+    document.body.style.backgroundColor = colors[i];
+    i < colors.length - 1 ? i++ : i = 0
+});
