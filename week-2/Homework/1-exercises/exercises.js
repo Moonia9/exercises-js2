@@ -35,11 +35,14 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   const content = document.querySelector("#content");
+  const ul = document.createElement("ul");
   shopping.forEach(product => {
-    const ul = document.createElement("ul");
-    ul.textContent = product;
-    content.append(product);
+    const li = document.createElement("li");
+    li.textContent = product;
+    ul.appendChild(li);
+   
   });
+  content.appendChild(ul);
 }
 
 /**
@@ -106,6 +109,7 @@ function exerciseThree(books) {
     img.style.width = "200px";
     img.style.margin = "10px";
     img.src = item.img;
+    // or using the SET ATTRIBUTE : img.setAttribute("src", item.url)
     li.append(img);
    //4.
   //  if(item.alreadyRead === true){
