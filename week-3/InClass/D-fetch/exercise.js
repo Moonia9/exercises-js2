@@ -20,7 +20,7 @@ form.addEventListener("submit", (event) => {
         output.innerText = "Please enter valid data";
         return;
     }
-    let url = "https://fcc-weather-api.glitch.me/api/current?lat=35&lon=45";
+    let url = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${lon}`;
     //console.log(lat, lon);
     output.innerText = "Loading...";
     fetch(url)

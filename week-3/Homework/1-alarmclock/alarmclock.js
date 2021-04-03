@@ -1,11 +1,11 @@
 function setAlarm() {
-  const setAlarmValue = parseInt(document.getElementById("alarmSet")).value.trim();
+  const setAlarmValue = parseInt(document.getElementById("alarmSet")).valueAsNumber; //gives you the value as a number
   outputValue(setAlarmValue);
 }
 
 function outputValue (time) {
   const remainingTime = document.getElementById("timeRemaining");
-  remainingTime.innerText = "Time Remaining: 00" + time
+  remainingTime.innerText = "Time Remaining: 00" + (time < 10 ? `0${time}` : time)
   if (time >= 0){
     setTimeout(() => { outputValue(--time)
       
@@ -15,8 +15,33 @@ function outputValue (time) {
   }
 }
 
+/* OR
+let alarmTime = document.querySelector("#alarmSet").valueAsNumber;
+let text = document.querySelector("#timeRemaining");
+let currentTime = alarmTime;
 
-
+timerID = setInterval ( //here we are storing the ID interval that JS gives us by default
+  function (num) {
+    if(currentTime === 0) {
+      //stop the timer
+      clearInterval(timerID);
+      
+      //Change the background color
+      document.body.style.backgroundColor = "red";
+      
+      //play alarm
+      playAlarm();
+    }
+    if(currentTime >= 0) {
+     text.innerText = "Time Remaining: 00:" + currentTime;
+     console.log(currentTime);
+    }
+    
+    currentTime = currentTime - 1;
+  },
+  1000,
+  alarmTime);
+}*/
 
 // DO NOT EDIT BELOW HERE
 
