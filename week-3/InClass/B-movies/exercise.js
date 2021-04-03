@@ -97,30 +97,20 @@ function showMovies () {
       haveWatched : true,
     };
 
-    // function addMovie (arrayOfObj, favoriteObj){
-    //   arrayOfObj.push(favoriteObj);
-    //   console.log(arrayOfObj);
-    
-    // }
 
-    // function addMovie (arrayObj, favObj){
-    //   let index = arrayObj.length;
-    //   arrayObj.splice(index,0,favObj)
-    // }
-
-    function addMovie (favMovie){
-      movies.push(favMovie);
+    function addMovies(movie) {
+      document.querySelectorAll('p:not([class])').forEach(p => p.remove()); 
+      movies.push(movie);
+      setTimeout(showMovies, 1000);
     }
-    addMovie(favoriteMovie);
 
-    setTimeout(addMovie, 2000, favoriteMovie, movies);
-
-
-    // function addMovies(movie) {
-    //   document.querySelectorAll('p:not([class])').forEach(p => p.remove()); 
-    //   movies.push(movie);
-    //   setTimeout(showMovies, 1000);
+    // function addMovie (newMovie) {
+    //   setTimeout(() => {
+    //     movies.push(newMovie)
+    //   }, 1000);
     // }
+    // addMovie(favoriteMovie);
+    // showMovies()
     
 
 //     Task 4
@@ -142,7 +132,6 @@ function createMovieObject(title, director, genre, haveWatched) {
   }
   return movie;
 }
-
 
 document.getElementById('save').addEventListener('click', event=> {
   event.preventDefault();
