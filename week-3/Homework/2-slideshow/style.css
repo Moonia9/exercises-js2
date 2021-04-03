@@ -1,1 +1,14 @@
 /** Write your CSS in here **/
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 30px;
+    margin-block-end: 25px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+body{
+    margin-top: 50px;
+    margin-left: 200px;
+}
