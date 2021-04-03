@@ -58,10 +58,99 @@ var movies = [
   },
 ];
 
-// create showMovies function
+// Task 1
+// Create a function called "showMovies" that
+// - iterates through the "movies" array and
+// - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
+// - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
 
+
+// create showMovies function
+function showMovies () {
+  movies.forEach(element => {
+    const allTheMovies = document.getElementById("all-movies");
+    const p = document.createElement("p");
+    p.innerText = `${element.title} - ${element.director}`
+    allTheMovies.appendChild(p);
+  });
+  const totalNumberOfMovies = document.getElementById("movies-number");
+  totalNumberOfMovies.innerText = movies.length;
+}
+
+
+// Task 2
+// Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
+// Create a new function called "addMovie"
+// - it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
+// - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
+// Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
+// How many movies can you see on your page?
 
 // create a new movie object for your favorite movie
 
+  setTimeout(showMovies, 1000, movies);
 
-// create addMovies function
+    let favoriteMovie = {
+      title : "Wild Strawberries",
+      director : "Ingmar Bergman",
+      type : "Drama/Psychological",
+      haveWatched : true,
+    };
+
+    // function addMovie (arrayOfObj, favoriteObj){
+    //   arrayOfObj.push(favoriteObj);
+    //   console.log(arrayOfObj);
+    
+    // }
+
+    // function addMovie (arrayObj, favObj){
+    //   let index = arrayObj.length;
+    //   arrayObj.splice(index,0,favObj)
+    // }
+
+    function addMovie (favMovie){
+      movies.push(favMovie);
+    }
+    addMovie(favoriteMovie);
+
+    setTimeout(addMovie, 2000, favoriteMovie, movies);
+
+
+    // function addMovies(movie) {
+    //   document.querySelectorAll('p:not([class])').forEach(p => p.remove()); 
+    //   movies.push(movie);
+    //   setTimeout(showMovies, 1000);
+    // }
+    
+
+//     Task 4
+// Create a form anywhere on your page. The form should have
+// - 4 input text fields, one for each property of your movie object
+// - a "save" button.
+// When the button is clicked
+// - The field values should be used to create a new movie object literal
+// - The new movie is then added to the list of movies and gets displayed on your page
+// TIP: Use the functions you created on tasks 1-3
+
+
+function createMovieObject(title, director, genre, haveWatched) {
+  const movie = {
+    title: title,
+    director: director,
+    genre: genre,
+    haveWatched: haveWatched
+  }
+  return movie;
+}
+
+
+document.getElementById('save').addEventListener('click', event=> {
+  event.preventDefault();
+  const title = document.getElementById('title').value;
+  const director = document.getElementById('director').value;
+  const genre = document.getElementById('genre').value;
+  const haveWatched = document.getElementById('watched_or_not').checked;
+
+  const newMovie = createMovieObject(title, director, genre, haveWatched); 
+  addMovies(newMovie);
+});   

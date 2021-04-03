@@ -11,6 +11,7 @@ user latitude and longitude.
 ================
 */
 const form = document.querySelector("form");
+const output = document.querySelector("h3");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const lat = document.querySelector("#lat").value.trim();
