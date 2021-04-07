@@ -1,15 +1,15 @@
 function setAlarm() {
-  const setAlarmValue = parseInt(document.getElementById("alarmSet")).valueAsNumber; //gives you the value as a number
-  outputValue(setAlarmValue);
+  let alarmValue = parseInt(document.getElementById("alarmSet").value);
+  changeOutputText(alarmValue);
 }
 
-function outputValue (time) {
-  const remainingTime = document.getElementById("timeRemaining");
-  remainingTime.innerText = "Time Remaining: 00" + (time < 10 ? `0${time}` : time)
-  if (time >= 0){
-    setTimeout(() => { outputValue(--time)
-      
-    }, 1000);
+function changeOutputText(time) {
+  const outputText = document.getElementById("timeRemaining");
+  outputText.innerText =
+    "Time Remaining: 00:" + (time < 10 ? `0${time}` : time);
+
+  if (time > 0) {
+    setTimeout(() => changeOutputText(--time), 1000);
   } else {
     playAlarm();
   }
